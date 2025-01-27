@@ -1,4 +1,7 @@
-adocument.getElementById('btn-search').addEventListener('click', () => {
+import { user } from "/src/scripts/services/user.js";
+import { repositoriesQuantity } from "./src/scripts/services/repositories.js";
+
+document.getElementById('btn-search').addEventListener('click', () => {
   const userName = document.getElementById('input-search').value
   getUserProfile(userName)
 })
@@ -13,20 +16,7 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
   }
 })
 
-async function user(userName) {
-  const response = await fetch(`https://api.github.com/users/${userName}`)
-  return await response.json()
-}
-
-async function repos(userName) {
-  const response = await fetch(`https://api.github.com/users/${userName}/repos`)
-  return await response.json()
-}
-
 function getUserProfile(userName){
-
-
-
   user().then(userData => {
     let userInfo = `<img src="${userData.avatar_url}" alt="Foto de perfil do usúario"/>
                     <div class="data">
@@ -38,7 +28,7 @@ function getUserProfile(userName){
 }
 
 function getUserRepositories(userName){
-    repos(userName).then(reposData => {
+    repositories(userName).then(reposData => {
       let repositoriesItens = ""
       reposData.forEach(repo => {
         repositoriesItens += `<li><a href="${repo.html_url} target="_blank">${repo.name}</a>"</li>`
