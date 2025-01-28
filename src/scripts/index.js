@@ -1,9 +1,12 @@
-import { user } from "/src/scripts/services/user.js";
-import { repositoriesQuantity } from "./src/scripts/services/repositories.js";
+import { getUser } from "/src/scripts/services/user.js";
+import { getRepositories } from "./src/scripts/services/repositories.js";
+
+import { user } from './objects/user.js'
+import { screen } from './objects/screen.js'
 
 document.getElementById('btn-search').addEventListener('click', () => {
   const userName = document.getElementById('input-search').value
-  getUserProfile(userName)
+  getUserData(userName)
 })
 
 document.getElementById('input-search').addEventListener('keyup', (e) => {
@@ -12,31 +15,17 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
   const isEnterKeyPressed = key === 13
 
   if (isEnterKeyPressed) {
-    getUserProfile(userName)
+    getUserData(userName)
   }
 })
 
-function getUserProfile(userName){
-  user().then(userData => {
-    let userInfo = `<img src="${userData.avatar_url}" alt="Foto de perfil do usúario"/>
-                    <div class="data">
-                        <h1>${userData.name ?? 'Não possui nome cadastrado 😅'}</h1>
-                        <p>${userData.bio ?? 'Não possui bio cadastrado 😅'}</p>
-                    </div>`
-    document.querySelector('.profile-data').innerHTML = userInfo
-  })
-}
+async function getUserData(userName){
+  const userResponse = await getUser(userName)
+  const repositoriesResponse = await getRepositories(userName)
 
-function getUserRepositories(userName){
-    repositories(userName).then(reposData => {
-      let repositoriesItens = ""
-      reposData.forEach(repo => {
-        repositoriesItens += `<li><a href="${repo.html_url} target="_blank">${repo.name}</a>"</li>`
-      })
+  user.setInfo(userResponse)
+  user.setRepositorioes(repositoriesResponse)
 
-      document.querySelector('.profile-data'),innerHTML += `<div class="repositories section">
-                                                              <h2>Repositórios</h2>
-                                                              <ul>${repositoriesItens}</ul>
-                                                            </div>`
-    })
+  screen.renderUser(user)
+
 }
