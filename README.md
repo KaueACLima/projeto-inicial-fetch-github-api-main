@@ -6,7 +6,7 @@
 <p>No gif a seguir, uma demonstração do projeto ao fazer uma busca do meu perfil.</p>
 <br>
 
-![Projeto GitHub Api Live](./src/assets/overview.gif)
+![Image](https://github.com/user-attachments/assets/d68ab13f-eeb5-47d0-a59d-0eda2454b161)
 
 <h2>🧑‍💻 Perfil do usuário</h2>
 <p>Na primeira seção do resultado da busca, há a foto do perfil do usuário. Ao lado, o nome em negrito, uma descrição da sua bio - caso não haja, será renderizado o aviso de ausência de bio -, seguida pelos números de Seguidores (<i>followers</i>) e de Seguindo (<i>follows</i>).</p>
