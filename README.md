@@ -12,7 +12,7 @@
 <p>Na primeira seção do resultado da busca, há a foto do perfil do usuário. Ao lado, o nome em negrito, uma descrição da sua bio - caso não haja, será renderizado o aviso de ausência de bio -, seguida pelos números de Seguidores (<i>followers</i>) e de Seguindo (<i>follows</i>).</p>
 <br>
 
-![Perfil do Usuário](./src/assets/perfil.png)
+![Perfil do Usuário](./src/assets/perfil.jpg)
 
 <h2>📱Responsivo</h2>
 <p>Versão Mobile</p>
@@ -30,7 +30,7 @@
 <p>Na última seção do resultado de busca, há uma lista dos eventos realizados no perfil do usuário e o último commit de cada evento. A mensagem ao lado informará em caso de não haver commits naquele evento. Ao clicar em um deles, o usuário também será redirecionado para o repositório correspondente.</p>
 <br>
 
-![Eventos](./src/assets/eventos.png)
+![Eventos](./src/assets/eventos.jpg)
 
 <h2>🛠️ Ferramentas Utilizadas</h2>
 
@@ -39,6 +39,6 @@
 - JavaScript
 - [GitHub API](https://docs.github.com/pt/rest?apiVersion=2022-11-28)
 
-💻 Page do projeto -  [Projeto GitHub API](https://lucas-cassimiro.github.io/buscando-api-github/)
+💻 Page do projeto -  [Projeto GitHub API](https://kaueaclima.github.io/projeto-inicial-fetch-github-api-main/)
 
-🙋‍♂️ Perfil no LinkedIn - [Lucas Cassimiro](https://www.linkedin.com/in/lucasocassimiro/)
+🙋‍♂️ Perfil no LinkedIn - [Lucas Cassimiro](https://www.linkedin.com/in/kau%C3%AA-lima-234515182/)
